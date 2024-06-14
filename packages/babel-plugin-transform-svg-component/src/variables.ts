@@ -69,7 +69,9 @@ const tsTypeReferenceSVGRef = (ctx: Context) => {
   return t.tsTypeReference(
     identifier,
     t.tsTypeParameterInstantiation([
-      t.tsTypeReference(t.identifier('SVGSVGElement')),
+      t.tsTypeReference(
+        t.identifier(ctx.opts.native ? 'Svg' : 'SVGSVGElement'),
+      ),
     ]),
   )
 }
